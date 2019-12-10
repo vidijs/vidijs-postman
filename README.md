@@ -36,7 +36,7 @@ cd 4.17.0
 ```
 curl -o root.wadl 'http://localhost:8080/application.wadl'
 curl -o APInoauth.wadl 'http://localhost:8080/APInoauth/application.wadl'
-curl -o API.wadl -u admin:admin 'http://localhost:8080/API.application.wadl'
+curl -o API.wadl -u admin:admin 'http://localhost:8080/API/application.wadl'
 ```
 
 * Open Postman, click the 'Import' button, choose 'Import File' tab.
@@ -59,5 +59,6 @@ curl -o API.wadl -u admin:admin 'http://localhost:8080/API.application.wadl'
   - Replace (regex) `"host\"\: \[(.*?|\n)*?\]` with `"host": ["{{VIDISPINE_URL}}"]`
   - Replace `"header": []` with `"header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}]`
   - Remove `"protocol": "https",`
+  - Remove `"port": "8080",`
 * Import the JSON file.  This will create a collection with the originally exported name.
 * Export the collection as JSON to this repository to ensure the JSON is reformatted by Postman.
