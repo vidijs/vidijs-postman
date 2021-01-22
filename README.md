@@ -56,7 +56,7 @@ curl -o API.wadl -u admin:admin 'http://localhost:8080/API/application.wadl'
 * Edit the file `Vidispine - 4.17.0.postman_collection.json`
   - Replace `"raw": "http://localhost:8080` with `"raw": "{{VIDISPINE_URL}}`
   - Replace `"name": "http://localhost:8080/` with `"name": "/`
-  - Replace (regex) `"host\"\: \[(.*?|\n)*?\]` with `"host": ["{{VIDISPINE_URL}}"]`
+  - Replace (regex) `"host": \[(.*?|\n)*?\]` with `"host": ["{{VIDISPINE_URL}}"]`
   - Replace `"header": []` with `"header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}]`
   - Remove `"protocol": "https",`
   - Remove `"port": "8080",`
